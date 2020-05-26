@@ -12,7 +12,7 @@ DECK = genanki.Deck(
 )
 MODEL = genanki.Model(
     1607392319,
-    'Main',
+    'Dictionary',
     fields=[
         { 'name': 'word' },
         { 'name': 'def' }
@@ -23,7 +23,25 @@ MODEL = genanki.Model(
             'qfmt': '{{word}}',
             'afmt': '{{word}}<br><span class="back">{{def}}</span><br><a href="https://translate.google.com/#view=home&op=translate&sl=it&tl=en&text={{word}}">Translate</a>'
         }
-    ]
+    ],
+    css="""
+a {
+ font-size: 12pt;
+}
+.card {
+ font-family: Interface;
+ font-size: 35px;
+ text-align: center;
+ color: black;
+ background-color: white;
+}
+
+
+.back {
+ color: #fed000;
+ font-size: 20px;
+}
+"""
 )
 
 # 7-bit C1 ANSI sequences
@@ -107,5 +125,5 @@ def anki_from_words(lines, output):
 def main(txt_file: Param("Text file", str),
          output: Param("Output file", str)="output.apkg"):
     wrds = Path(txt_file).read_text().split('\n')
-    anki_from_words(wrds, out_file)
+    anki_from_words(wrds, output)
 

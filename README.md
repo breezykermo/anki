@@ -3,5 +3,5 @@ Generate an Anki deck from words written on Remarkable.
 
 ## Run
 ```
-pipenv run python remt-to-anki.py
+pipenv run python mk_anki.py words.txt --output deck.apkg
 ```

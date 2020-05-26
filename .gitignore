@@ -1,0 +1,6 @@
+*.apkg
+tags
+tags.lock
+tags.temp
+*.txt
+!words.txt
